@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="org.secuso.privacyfriendlyintervaltimer.activities.MainActivity">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        tools:context="org.secuso.privacyfriendlyintervaltimer.activities.MainActivity">
 
-    <include layout="@layout/toolbar"/>
+        <include layout="@layout/toolbar"/>
 
-    <include layout="@layout/content_main"
+        <include layout="@layout/content_main"
         android:id="@+id/include2" />
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|right"
-        android:weightSum="1"
-        app:layout_anchor="@+id/include2"
-        app:layout_anchorGravity="bottom|right">
-
-        <TextView
-            android:id="@+id/main_text_rest_interval"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/main_text_start"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp"
-            android:textStyle="bold|italic"
-            app:layout_anchor="@+id/include2"
-            app:layout_anchorGravity="bottom|left" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/start_workout"
+        <LinearLayout
+            android:id="@+id/start_and_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_margin="@dimen/fab_margin"
-            android:background="@drawable/button_fullwidth"
-            android:onClick="onClick"
-            android:src="@drawable/ic_play_48dp"
-            app:backgroundTint="@color/colorPrimary"
-            app:maxImageSize="48dp" />
+            android:layout_gravity="right"
+            android:weightSum="1"
+            app:layout_anchor="@+id/include2"
+            app:layout_anchorGravity="bottom|right">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/main_text_rest_interval"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/main_text_start"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:layout_anchor="@+id/include2"
+                app:layout_anchorGravity="bottom|left" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/start_workout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/fab_margin"
+                android:background="@drawable/button_fullwidth"
+                android:onClick="onClick"
+                android:src="@drawable/ic_play_48dp"
+                app:backgroundTint="@color/colorPrimary"
+                app:maxImageSize="48dp" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <include layout="@layout/bottom_nav"
+        android:id="@+id/bottom_navigation"/>
+</LinearLayout>
