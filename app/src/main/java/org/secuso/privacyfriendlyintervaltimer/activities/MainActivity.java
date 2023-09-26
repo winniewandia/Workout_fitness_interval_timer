@@ -26,12 +26,17 @@ import android.os.IBinder;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.secuso.privacyfriendlyintervaltimer.R;
 import org.secuso.privacyfriendlyintervaltimer.helpers.NotificationHelper;
@@ -104,6 +109,35 @@ public class MainActivity extends BaseActivity {
 
         //Set default values for the timer configurations
         setDefaultTimerValues();
+
+        //bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.nav_main:
+                                intent = new Intent(MainActivity.this, MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                                return true;
+                            case R.id.nav_statistics:
+                                intent = new Intent(MainActivity.this, StatisticsActivity.class);
+                                createBackStack(intent);
+                                return true;
+                            case R.id.nav_settings:
+                                intent = new Intent(MainActivity.this, SettingsActivity.class);
+                                //intent.putExtra( PreferenceActivity.EXTRA_SHOW_FRAGMENT, SettingsActivity.class);
+                                //intent.putExtra( PreferenceActivity.EXTRA_NO_HEADERS, true );
+                                createBackStack(intent);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                }
+        );
 
         //Set the GUI text
         this.workoutIntervalText = (TextView) this.findViewById(R.id.main_workout_interval_time);

@@ -61,6 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
     private Handler mHandler;
     protected SharedPreferences mSharedPreferences;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,7 +133,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnNaviga
      * {@code AndroidManifest.xml} to find out the parent activity names for each activity.
      * @param intent
      */
-    private void createBackStack(Intent intent) {
+    public void createBackStack(Intent intent) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             TaskStackBuilder builder = TaskStackBuilder.create(this);
             builder.addNextIntentWithParentStack(intent);
