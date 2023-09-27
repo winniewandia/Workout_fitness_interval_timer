@@ -21,11 +21,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="main_button_text">Full Width Button</string>
     <string name="main_button_disabled_text">Inactive Button</string>
-    <string name="main_text_work_interval">Workout Interval</string>
-    <string name="main_text_rest_interval">Rest Interval</string>
-    <string name="main_text_sets">Sets</string>
+    <string name="main_text_work_interval">Exercise Interval</string>
+    <string name="main_text_rest_interval">Rest</string>
+    <string name="main_text_sets">Rounds</string>
     <string name="main_text_start">START  ></string>
-    <string name="main_text_title">Please choose:</string>
+    <string name="main_text_title">Round setting</string>
     <string name="main_block_periodization_headline">Configuration:</string>
     <string name="main_block_periodization">Block Periodization</string>
     <string name="main_block_periodization_info">Block Periodization</string>
