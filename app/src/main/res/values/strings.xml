@@ -38,8 +38,8 @@
     <string name="workout_headline_done">DONE</string>
     <string name="workout_headline_rest">REST</string>
     <string name="workout_info">Set</string>
-    <string name="workout_finished_text">You did it!</string>
-    <string name="workout_finished_calories_text">Amount of calories burned:</string>
+    <string name="workout_finished_text">Workout complete</string>
+    <string name="workout_finished_calories_text">Total calories:</string>
     <string name="workout_finished_calories_unit">kcal</string>
     <string name="workout_block_periodization_headline">Block Break</string>
     <string name="workout_finish_button">FINISH</string>
@@ -208,6 +208,7 @@
     <string name="slide4_text_2">This feature allows you to configure longer, separate breaks in between the exercises. This way the workout can be split into multiple high intensity workout cycles.</string>
 
     <string name="okay">Okay</string>
+    <string name="done">Done</string>
     <string name="viewhelp">View Help</string>
     <string name="main_button_welcomedialog">Show Welcome</string>
     <string name="next">Next</string>
