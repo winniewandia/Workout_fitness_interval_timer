@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#D5FC45</color>
-    <color name="colorPrimaryDark">#024265</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#0274B2</color>
     <color name="transparent">#00000000</color>
     <color name="white">#ffffff</color>
@@ -13,6 +13,7 @@
     <color name="yellow">#f6d126</color>
     <color name="red">#B71C1C</color>
     <color name="green">#388E3C</color>
+    <color name="purple">#8552F3</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen">#026499</color>

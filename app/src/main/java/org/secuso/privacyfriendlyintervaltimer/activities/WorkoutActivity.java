@@ -284,9 +284,9 @@ public class WorkoutActivity extends AppCompatActivity {
      */
     private void setWorkoutGuiColors(boolean guiFlip) {
         int textColor = guiFlip ? R.color.white : R.color.black;
-        int backgroundColor = guiFlip ? R.color.lightblue : R.color.white;
-        int progressBackgroundColor = guiFlip ? R.color.white : R.color.lightblue;
-        int buttonColor = guiFlip ? R.color.white : R.color.darkblue;
+        int backgroundColor = guiFlip ? R.color.black : R.color.purple;
+        int progressBackgroundColor = guiFlip ? R.color.purple : R.color.black;
+        int buttonColor = guiFlip ? R.color.white : R.color.black;
 
 
         currentSetsInfo.setTextColor(getResources().getColor(textColor));
@@ -483,6 +483,7 @@ public class WorkoutActivity extends AppCompatActivity {
     private void showFinishedView(){
         TextView finishButton = (TextView) this.findViewById(R.id.finish_workout);
         finishButton.setEnabled(false);
+        View view = findViewById(R.id.workout_content);
 
         if(timerService != null){
             timerService.setCurrentTitle(getString(R.string.workout_headline_done));
@@ -491,6 +492,7 @@ public class WorkoutActivity extends AppCompatActivity {
         this.workoutTitle.setText(getResources().getString(R.string.workout_headline_done));
         this.workoutTimer.setText("0");
         this.fab.hide();
+        view.setVisibility(View.GONE);
         this.finishedView.setVisibility(View.VISIBLE);
 
         finishedView.setOnTouchListener(new OnTouchListener() {
