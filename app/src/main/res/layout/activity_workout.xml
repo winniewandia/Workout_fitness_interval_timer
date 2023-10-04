@@ -55,30 +55,42 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_workout" />
+<!--    <include layout="@layout/content_workout" />-->
 
+    <FrameLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <include layout="@layout/content_workout" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/confetti"
+            android:scaleType="center"
+            android:layout_gravity="center"
+            />
     <LinearLayout
         android:id="@+id/finishedView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
         android:orientation="vertical"
-        android:weightSum="1"
-        android:layout_marginTop="50dp">
+        android:weightSum="1">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/party"
             android:layout_gravity="center"
-            android:layout_weight="0.02"
-            android:layout_marginTop="90dp" />
+            android:layout_weight="0.09"
+             />
 
         <TextView
             android:id="@+id/workout_finish_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.1"
+            android:layout_weight="0.12"
             android:gravity="bottom|center"
             android:paddingBottom="10dp"
             android:text="@string/workout_finished_text"
@@ -106,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_alignBottom="@+id/workout_finish_text"
-            android:layout_weight="0.08"
+            android:layout_weight="0.1"
             android:gravity="top|center"
             android:text="0"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -146,6 +158,8 @@
             android:textStyle="bold"
             android:background="@drawable/button_highlighted_2"/>
     </LinearLayout>
+
+    </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_pause_resume"

@@ -55,7 +55,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_workout" />
+<!--    <include layout="@layout/content_workout" />-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_pause_resume"
@@ -69,28 +69,40 @@
         app:maxImageSize="48dp"
         app:backgroundTint="@color/colorPrimary" />
 
-    <LinearLayout
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <include layout="@layout/content_workout" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/confetti"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            />
+
+        <LinearLayout
         android:id="@+id/finishedView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
         android:orientation="vertical"
         android:weightSum="1"
         android:layout_marginTop="49dp">
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/party"
-            android:layout_gravity="center"
-            android:layout_weight="0.02"
-            android:layout_marginTop="90dp" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/party"
+                android:layout_gravity="center"
+                android:layout_weight="0.15" />
 
         <TextView
             android:id="@+id/workout_finish_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.25"
             android:gravity="bottom|center"
             android:paddingBottom="10dp"
             android:text="@string/workout_finished_text"
@@ -104,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_alignBottom="@+id/workout_finish_text"
-            android:layout_weight="0.17"
+            android:layout_weight="0.1"
             android:gravity="top|center"
             android:visibility="invisible"
             android:text="@string/workout_finished_calories_text"
@@ -118,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_alignBottom="@+id/workout_finish_text"
-            android:layout_weight="0.15"
+            android:layout_weight="0.1"
             android:gravity="top|center"
             android:text="0"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -157,5 +169,7 @@
             android:textStyle="bold"
             android:background="@drawable/button_highlighted_2"/>
     </LinearLayout>
+    </FrameLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
